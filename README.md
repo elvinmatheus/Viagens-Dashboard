@@ -18,7 +18,9 @@ Este documento descreve o projeto de um dashboard que utiliza os dados de viagen
 
 5. **Criação do Data Warehouse:** Os dados processados são carregados para um cluster do `Amazon Redshift`.
 
-![Diagrama tabela desnormalizada](https://github.com/elvinmatheus/viagens-Dashboard/blob/main/imagens/Tabela%20desnormalizada.png)
+<p align="center">
+  <img width="360" height="699" src="https://github.com/elvinmatheus/viagens-Dashboard/blob/main/imagens/Tabela%20desnormalizada.png">
+</p>
 
 6. **Elaboração do Dashboard:** Os dados armazenados no cluster do Redshift são usados para criar Dashboards no `Google Looker Studio`.
 
