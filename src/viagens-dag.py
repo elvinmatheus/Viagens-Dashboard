@@ -3,7 +3,6 @@ import os
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash_operator import BashOperator
-from airflow.sensors.filesystem import FileSensor
 from extract_from_website import run_extract_from_website
 from load_raw_data_to_s3 import run_load_raw_data
 from extract_from_s3 import run_extract_from_s3
@@ -15,7 +14,7 @@ dag_path = os.getcwd()
 
 args = {
     'owner': 'airflow',
-    'start_date': datetime(2023, 6, 27),
+    'start_date': datetime.now(),
 }
 
 config_dag = DAG(
@@ -33,7 +32,7 @@ task = BashOperator(
 default_args = {
     'owner': 'airflow',
     'depends_on_past': True,
-    'start_date': datetime(2023, 6, 27),
+    'start_date': datetime.now() + timedelta(days=1),
     'retries': 3,
     'retry_delay': timedelta(minutes=10)
 }
