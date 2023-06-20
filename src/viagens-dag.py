@@ -15,7 +15,9 @@ dag_path = os.getcwd()
 
 args = {
     'owner': 'airflow',
-    'start_date': datetime(2023,6,27),
+    'start_date': datetime(2023,6,27, 3, 0),
+    'schedule_interval': timedelta(minutes=10),
+    'end_date': datetime(2023,6,27,3,10)
 }
 
 config_dag = DAG(
