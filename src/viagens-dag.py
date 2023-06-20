@@ -15,7 +15,7 @@ dag_path = os.getcwd()
 
 args = {
     'owner': 'airflow',
-    'start_date': datetime.now(),
+    'start_date': datetime(2023,6,27),
 }
 
 config_dag = DAG(
@@ -33,7 +33,7 @@ task = BashOperator(
 default_args = {
     'owner': 'airflow',
     'depends_on_past': True,
-    'start_date': datetime.now() + timedelta(days=1),
+    'start_date': datetime(2023,6,28),
     'email': ['airflow@example.com'],
     'email_on_failure': True,
     'email_on_retry': True,
